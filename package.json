@@ -1,6 +1,6 @@
 {
   "name": "poormansflux",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Poor Man's Flux, a really simple React/functional based flux alternative",
   "homepage": "https://github.com/ernestofreyreg/poormansflux",
   "author": "Ernesto Freyre G. (https://github.com/ernestofreyreg)",
