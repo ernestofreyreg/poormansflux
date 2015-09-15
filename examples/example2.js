@@ -2,35 +2,7 @@ var
   TodoItems,
   TodoInput,
   TodoList,
-  todoActions,
-  poorMansFluxMixin;
-
-poorMansFluxMixin = function(store, actions) {
-  return {
-    getInitialState: function() {
-      return store;
-    },
-    childContextTypes: {
-      flux: React.PropTypes.object
-    },
-
-    getChildContext: function() {
-      var
-        flux;
-
-      flux = { store: this.state };
-      flux.actions = actions(this.dispatch, flux);
-
-      return {
-        flux: flux
-      };
-    },
-
-    dispatch: function(data) {
-      this.setState(data);
-    }
-  };
-};
+  todoActions;
 
 todoActions = function(dispatch, flux) {
   return {

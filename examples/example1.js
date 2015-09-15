@@ -1,38 +1,9 @@
 'use strict';
 
 var
-  poorMansFluxMixin,
   Button,
   App,
   myActions;
-
-
-poorMansFluxMixin = function(store, actions) {
-  return {
-    getInitialState: function() {
-      return store;
-    },
-    childContextTypes: {
-      flux: React.PropTypes.object
-    },
-
-    getChildContext: function() {
-      var
-        flux;
-
-      flux = { store: this.state };
-      flux.actions = actions(this.dispatch, flux);
-
-      return {
-        flux: flux
-      };
-    },
-
-    dispatch: function(data) {
-      this.setState(data);
-    }
-  };
-};
 
 Button = React.createClass({
   propTypes: {
