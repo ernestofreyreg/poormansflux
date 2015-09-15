@@ -1,15 +1,13 @@
 'use strict';
 
-
 var
-  fluxComponentMixin,
+  poorMansFluxMixin,
   Button,
   App,
-  myActionsSimpler,
   myActions;
 
 
-fluxComponentMixin = function(store, actions) {
+poorMansFluxMixin = function(store, actions) {
   return {
     getInitialState: function() {
       return store;
@@ -63,30 +61,6 @@ Button = React.createClass({
 });
 
 myActions = function(dispatch, flux) {
-  var
-    actions,
-    getOrInit;
-
-  getOrInit = function() {
-    if (!actions) {
-      actions = {
-        increaseNumberA: function() {
-          dispatch({valueA: flux.store.valueA + 1});
-        },
-        increaseNumberB: function() {
-          dispatch({valueB: flux.store.valueB + 1});
-        }
-      };
-    }
-
-    return actions;
-  };
-
-  return getOrInit;
-};
-
-
-myActionsSimpler = function(dispatch, flux) {
   return {
     increaseNumberA: function() {
       dispatch({valueA: flux.store.valueA + 1});
@@ -97,9 +71,8 @@ myActionsSimpler = function(dispatch, flux) {
   };
 };
 
-
 App = React.createClass({
-  mixins: [fluxComponentMixin({valueA: 0, valueB: 0}, myActionsSimpler)],
+  mixins: [poorMansFluxMixin({valueA: 0, valueB: 0}, myActions)],
 
   render: function() {
     return (
