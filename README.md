@@ -1,6 +1,6 @@
 ### Poor Man's Flux
 
-Poor Man's Flux, a really simple React/functional based flux alternative
+Poor Man's Flux, a really simple React/functional based flux alternative. [Read more](http://codexsw.logdown.com/posts/300663-on-poor-mans-flux)
 
 The real power of Flux comes from mantaining the unidirectional flow of data from Dispatcher to Actions to Stores to Components. 
 
@@ -66,3 +66,5 @@ Button = React.createClass({
 As you can see, Action get called, stores get changed, components get redrawn on a circular fashion.
 
 This library was created for academic purpouses, maybe a occasional use on small interfaces where using other Flux libraries would be an overkill.
+
+
