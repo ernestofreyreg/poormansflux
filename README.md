@@ -1,5 +1,7 @@
 ### Poor Man's Flux
 
+[![Build Status](https://travis-ci.org/ernestofreyreg/poormansflux.svg?branch=master)](https://travis-ci.org/ernestofreyreg/poormansflux)
+
 Poor Man's Flux, a really simple React/functional based flux alternative. [Read more](http://codexsw.logdown.com/posts/300663-on-poor-mans-flux)
 
 The real power of Flux comes from mantaining the unidirectional flow of data from Dispatcher to Actions to Stores to Components. 
