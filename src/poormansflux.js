@@ -8,15 +8,15 @@
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD
-    define(['react'], factory);
+    define([], factory);
   } else if (typeof exports === 'object') {
     // Node, CommonJS-like
-    module.exports = factory(require('react'));
+    module.exports = factory();
   } else {
     // Browser globals (root is window)
-    root.poorMansFluxMixin = factory(root.React);
+    root.poorMansFluxMixin = factory();
   }
-}(this, function (react) {
+}(this, function () {
   return function(store, actions) {
     return {
       getInitialState: function() {
@@ -24,7 +24,7 @@
       },
 
       childContextTypes: {
-        flux: react.PropTypes.object
+        flux: function() { return true; }
       },
 
       getChildContext: function() {
