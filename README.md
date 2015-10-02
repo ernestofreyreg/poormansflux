@@ -69,4 +69,19 @@ As you can see, Action get called, stores get changed, components get redrawn on
 
 This library was created for academic purpouses, maybe a occasional use on small interfaces where using other Flux libraries would be an overkill.
 
+**Updated on version 0.1.5**
 
+You can now pass a callback on dispatch as:
+
+```
+myActions = function(dispatch, flux) {
+  return {
+    increaseNumber: function() {
+      dispatch({value: flux.store.value + 1}, function() { ... });
+    },
+    decreaseNumber: function() {
+      dispatch({value: flux.store.value - 1});
+    }
+  };
+};
+```

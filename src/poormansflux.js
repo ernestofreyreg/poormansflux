@@ -39,8 +39,8 @@
         };
       },
 
-      dispatch: function(data) {
-        this.setState(data);
+      dispatch: function(data, callback) {
+        this.setState(data, callback);
       }
     };
   };
